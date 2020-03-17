@@ -12,7 +12,7 @@ function App() {
 
   const genreRETobj: IGenre[] = [{genre: "RAP"}];
   const genreFBCobj: IGenre[] = [{genre: "RAP"}];
-  const AlbunsRET: IAlbuns[] = [{ name: "Numa Margem Distante" }, { name: "VIVAZ" }, { name: "REVEL" }, { name: "AUDAZ" }];
+  const AlbunsRET: IAlbuns[] = [{ name: "Numa Margem Distante", visible:false }, { name: "VIVAZ", visible: true }, { name: "REVEL", visible: true }, { name: "AUDAZ", visible: true }];
   
   const filipeRet: IArtists = {
     name: "Filipe Ret",
@@ -27,12 +27,11 @@ function App() {
   const [albunsRET, setAlbunsRET] = useState<IAlbuns[]>(AlbunsRET);
   const [ret, setRET] = useState<IArtists>(filipeRet);
 
-  const [albunsFBC, setAlbunsFBC] = useState<IAlbuns[]>([{ name: "S.C.A" }, { name: "PADRIM" }]);
+  const [albunsFBC, setAlbunsFBC] = useState<IAlbuns[]>([{ name: "S.C.A", visible: true }, { name: "PADRIM", visible: true }]);
   const [fbc, setFBC] = useState<IArtists>({ name: "FBC", age: 28, albums: albunsFBC, genre: genreFBC });
 
   return (
     <div>
-      {Date.now}
       <div className="container">
         <div className="row">
           <div className="col-sm">

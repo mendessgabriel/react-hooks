@@ -32,7 +32,8 @@ const Panel = (artist: IArtists, setRet: (artista: IArtists) => void)  => {
                                 })}
                             </ul>
                         </nav>
-                        <div id="album">
+                        <div>
+                            {Date.now}
                         </div>
                     </div>
                 </div>

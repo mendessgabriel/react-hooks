@@ -6,4 +6,5 @@ export default interface IAlbuns {
     artist?: IArtists;
     release?: Date;
     songs?: ISongs[];
+    visible?: Boolean;
 }
