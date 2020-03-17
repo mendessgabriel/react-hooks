@@ -1,0 +1,10 @@
+.background-deafult {
+    box-shadow: 0px 2px 8px grey;
+    cursor: pointer;
+}
+.isVisible{
+    display: none;
+}
+.geral-background{
+    background: #0e0e0f;
+}
