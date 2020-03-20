@@ -26,7 +26,7 @@ const Panel = (artist: IArtists, setName: (artista: IArtists) => void) => {
     };
 
     function closeAlbumSongs() { setVisible(false) }
-
+    
     if (!visible) {
         return (
             <div>

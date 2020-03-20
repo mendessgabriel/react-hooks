@@ -5,12 +5,10 @@ import "bootstrap/dist/css/bootstrap.css"
 
 const Menu = () => {
     return (
-        <div >
-            <ul>
-                <li>Perfil</li>
-                <li>Configurações</li>
-            </ul>
-        </div>
+        <ul className="bg-warning ulCustom">
+            <li className="liCustom"><a>Perfil</a></li>
+            <li className="liCustom"><a>Configurações</a></li>
+        </ul>
     );
 }
 

@@ -51,7 +51,7 @@ function App() {
     <div className="appFont">
       {Header(appGeneral, setAppGeneral)}
       <div className="row">
-        <div className="col-sm-1">
+        <div className="col-sm-2">
           {renderMenu()}
         </div>
         <div className="col-sm">
