@@ -32,9 +32,6 @@ const Panel = (artist: IArtists, setRet: (artista: IArtists) => void)  => {
                                 })}
                             </ul>
                         </nav>
-                        <div>
-                            {Date.now}
-                        </div>
                     </div>
                 </div>
                 {/* <input type="text" onChange={(event) => setRet({...artist, name: event.target.value})}/> */}

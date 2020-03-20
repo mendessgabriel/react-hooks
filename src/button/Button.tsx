@@ -9,7 +9,7 @@ const Button = (albuns: IAlbuns) => {
     if (albuns.visible) {
         return (
             <div>
-                <button className="btn btn-warning borderColor">{albuns.name}</button>
+                <button className="btn btn-warning borderColor"><b>{albuns.name}</b></button>
             </div>
         );
     } else {

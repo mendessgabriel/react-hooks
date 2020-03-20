@@ -35,7 +35,7 @@ function App() {
   const [fbc, setFBC] = useState<IArtists>({ name: "FBC", age: 28, albums: albunsFBC, genre: genreFBC });
 
   return (
-    <div>
+    <div className="appFont">
       {Header()}
       <div className="container">
         <div className="row">
