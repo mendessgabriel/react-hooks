@@ -7,12 +7,16 @@ import IAlbuns from "./album/IAlbuns";
 import IGenre from "./genre/IGenre";
 
 import Panel from "./panel/Panel";
+import ISongs from './album/songs/ISongs';
+import Header from './header/Header';
 
 function App() {
 
   const genreRETobj: IGenre[] = [{genre: "RAP"}];
   const genreFBCobj: IGenre[] = [{genre: "RAP"}];
-  const AlbunsRET: IAlbuns[] = [{ name: "Numa Margem Distante", visible:false }, { name: "VIVAZ", visible: true }, { name: "REVEL", visible: true }, { name: "AUDAZ", visible: true }];
+
+  // const songsRET: ISongs[] = [{name: "Invicto",duration: "",song: "saaa",album: albunsRET }];
+  const AlbunsRET: IAlbuns[] = [{ name: "Numa Margem Distante", visible:true }, { name: "VIVAZ", visible: true }, { name: "REVEL", visible: true }, { name: "AUDAZ", visible: true }];
   
   const filipeRet: IArtists = {
     name: "Filipe Ret",
@@ -32,6 +36,7 @@ function App() {
 
   return (
     <div>
+      {Header()}
       <div className="container">
         <div className="row">
           <div className="col-sm">
