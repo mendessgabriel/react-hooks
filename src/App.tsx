@@ -15,8 +15,14 @@ function App() {
   const genreRETobj: IGenre[] = [{genre: "RAP"}];
   const genreFBCobj: IGenre[] = [{genre: "RAP"}];
 
+  const songsTreVVZ: ISongs[] = [{song:"Neurotico de guerra", duration: "3:37", name: "Neurotico de guerra"}, {song:"Réus", duration: "3:37", name: "Réus"}];
+  const [songsRetVVZ] = useState<ISongs[]>(songsTreVVZ);
+
+  const songsTreNMD: ISongs[] = [{song:"Só precisamos de nós", duration: "2:37", name: "Só precisamos de nós"},{song:"Desenho", duration: "3:28", name: "Desenho"},{song:"Questione", duration: "2:32", name: "Questione"}];
+  const [songsRetNMD] = useState<ISongs[]>(songsTreNMD);
+
   // const songsRET: ISongs[] = [{name: "Invicto",duration: "",song: "saaa",album: albunsRET }];
-  const AlbunsRET: IAlbuns[] = [{ name: "Numa Margem Distante", visible:true }, { name: "VIVAZ", visible: true }, { name: "REVEL", visible: true }, { name: "AUDAZ", visible: true }];
+  const AlbunsRET: IAlbuns[] = [{ name: "Numa Margem Distante", visible:true, songs: songsRetNMD }, { name: "VIVAZ", visible: true, songs: songsRetVVZ }, { name: "REVEL", visible: true, songs: songsRetNMD }, { name: "AUDAZ", visible: true, songs: songsRetNMD }];
   
   const filipeRet: IArtists = {
     name: "Filipe Ret",
@@ -31,7 +37,7 @@ function App() {
   const [albunsRET, setAlbunsRET] = useState<IAlbuns[]>(AlbunsRET);
   const [ret, setRET] = useState<IArtists>(filipeRet);
 
-  const [albunsFBC, setAlbunsFBC] = useState<IAlbuns[]>([{ name: "S.C.A", visible: true }, { name: "PADRIM", visible: true }]);
+  const [albunsFBC, setAlbunsFBC] = useState<IAlbuns[]>([{ name: "S.C.A", visible: true, songs: songsRetNMD }, { name: "PADRIM", visible: true, songs: songsRetNMD }]);
   const [fbc, setFBC] = useState<IArtists>({ name: "FBC", age: 28, albums: albunsFBC, genre: genreFBC });
 
   return (

@@ -8,3 +8,12 @@
 .geral-background{
     background: #0e0e0f;
 }
+.iconStyle{
+    float: right;
+}
+.strippedIn{
+    background: #e8e8e8;
+}
+.strippedOut{
+    background: white;
+}

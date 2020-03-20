@@ -5,6 +5,6 @@ export default interface IAlbuns {
     name?: String;
     artist?: IArtists;
     release?: Date;
-    songs?: ISongs[];
+    songs: ISongs[];
     visible?: Boolean;
 }
