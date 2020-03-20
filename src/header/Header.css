@@ -1,3 +1,6 @@
+.backgroundDefault{
+    background: #d1c70d!important;
+}
 .paligned{
     justify-content: center;
 }
@@ -12,4 +15,10 @@
 }
 .iconstyle{
     cursor: pointer;
+}
+.colorWhite{
+    color: white;
+}
+.colorWhite::placeholder{
+    color: white;
 }
