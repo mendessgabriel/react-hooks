@@ -12,11 +12,16 @@ import Header from './header/Header';
 import Menu from './menu/Menu';
 import IAppGeneral from './IAppGeneral';
 
+import Carousel, { Dots } from '@brainhubeu/react-carousel';
+import '@brainhubeu/react-carousel/lib/style.css';
+
+import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
+
 function App() {
   const [instantGenre, setInstanceGenre] = useState<IGenre[]>([]);
   const [instantSongs, setInstantSongs] = useState<ISongs[]>([]);
   const [instantAlbuns, setInstantAlbuns] = useState<IAlbuns[]>([])
-  const [instantArtist, setInstantArtist] = useState<IArtists>({age:0, name:"",albums:instantAlbuns,genre:instantGenre});
+  const [instantArtist, setInstantArtist] = useState<IArtists>({ age: 0, name: "", albums: instantAlbuns, genre: instantGenre });
   const genreRETobj: IGenre[] = [{ genre: "RAP" }];
   const genreFBCobj: IGenre[] = [{ genre: "RAP" }];
 
@@ -58,7 +63,7 @@ function App() {
       if (element.name.includes(parametro.toString())) {
         setArtistsToBeDisplayed([element]); //Its not working
       }
-      console.log(artistsToBeDisplayed);  
+      console.log(artistsToBeDisplayed);
     });
   }
 
@@ -73,12 +78,26 @@ function App() {
           <div className="container">
             <div className="row">
               <div className="col-sm">
-                {Panel(ret, setRET)}
+                <Carousel
+                  infinite
+                  slidesPerPage={2}
+                  autoPlay={2500}
+                  stopAutoPlayOnHover
+                  arrowLeft={<MdKeyboardArrowLeft />}
+                  arrowRight={<MdKeyboardArrowRight />}
+                  addArrowClickHandler>
+                  <div className="col-sm">
+                    {Panel(ret, setRET)}
+                  </div>
+                  <div className="col-sm">
+                    {Panel(fbc, setFBC)}
+                  </div>
+                </Carousel>
               </div>
-              <div className="col-sm">
+              {/* <div className="col-sm">
                 {Panel(fbc, setFBC)}
               </div>
-              {searchArtistSong}
+              {searchArtistSong} */}
             </div>
           </div>
         </div>
