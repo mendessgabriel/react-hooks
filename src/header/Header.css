@@ -20,5 +20,5 @@
     color: white;
 }
 .colorWhite::placeholder{
-    color: white;
+    color:  #ffc107;
 }
