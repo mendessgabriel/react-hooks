@@ -10,6 +10,7 @@ import ISongs from '../album/songs/ISongs';
 
 import { MdClose } from "react-icons/md";
 import { IconContext } from "react-icons";
+import IAppGeneral from '../IAppGeneral';
 
 const Panel = (artist: IArtists, setName: (artista: IArtists) => void) => {
 
@@ -24,10 +25,8 @@ const Panel = (artist: IArtists, setName: (artista: IArtists) => void) => {
         );
     };
 
-    function closeAlbumSongs() {
-        setVisible(false);
-    }
-
+    function closeAlbumSongs() { setVisible(false) }
+    
     if (!visible) {
         return (
             <div>
