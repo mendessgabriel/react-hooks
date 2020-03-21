@@ -75,8 +75,8 @@ const Panel = (artist: IArtists, setName: (artista: IArtists) => void) => {
                         </div>
                     </div>
                     <IconContext.Provider value={{ color: "btn-dark", size: "2em", className: "iconStyle global-class-name" }}>
-                        <div className="iconStyle">
-                            <MdClose onClick={() => closeAlbumSongs()} />
+                        <div className="iconStyle"> 
+                            <MdClose onClick={() => closeAlbumSongs()}/>
                         </div>
                     </IconContext.Provider>
                     <div>

@@ -17,3 +17,6 @@
 .strippedOut{
     background: white;
 }
+.cursorPointer{
+    cursor: pointer;
+}
