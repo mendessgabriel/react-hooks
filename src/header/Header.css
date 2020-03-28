@@ -15,6 +15,7 @@
 }
 .iconstyle{
     cursor: pointer;
+    margin-left: 2em;
 }
 .colorWhite{
     color: white;
@@ -33,4 +34,12 @@
 
 .iconAdjust{
     margin-left: 0px!important;
+}
+
+
+/* grid */
+.grid-item {
+    background-color: #ffc107;
+    text-align: center;
+    padding: 0.5em;
 }

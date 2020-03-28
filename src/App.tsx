@@ -72,7 +72,9 @@ function App() {
 
   return (
     <div className="appFont">
-      {Header(appGeneral, setAppGeneral, searchArtistSong)}
+      <div className="grid-container">
+        {Header(appGeneral, setAppGeneral, searchArtistSong)}
+      </div>
       <div className="row">
           <div className="container">
             <div className="row">

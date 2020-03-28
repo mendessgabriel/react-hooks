@@ -34,40 +34,40 @@ const Header = (menuVisibility: IAppGeneral, setAppGeneral: (appGeneral: IAppGen
     }
 
     return (
-        <div className="bg-warning header-align card navbar paligned row">
-            <div className="container iconAdjust">
-                <div className=".col-6 .col-md-4">
-                    {/* <IconContext.Provider value={{ color: "btn-dark", size: "2em", className: "global-class-name" }}>
+        <>
+            <div className="grid-item">
+                {/* <IconContext.Provider value={{ color: "btn-dark", size: "2em", className: "global-class-name" }}>
                         <div>
                             <MdPersonOutline onClick={() => {clickAdmin()}} className="iconstyle" />
                         </div>
                     </IconContext.Provider> */}
-                    <div className="dropdown" onClick={toggleOpen}>
-                        <IconContext.Provider value={{ color: "btn-dark", size: "2em", className: "global-class-name" }}>
-                            <div>
-                                <MdPersonOutline className="iconstyle" />
-                            </div>
-                        </IconContext.Provider>
-                        {isOpen && (Menu(isOpen, setOpen))}
-                    </div>
+                <div className="dropdown" >
+                    <IconContext.Provider value={{ color: "btn-dark", size: "2em", className: "global-class-name" }}>
+                        <div className="row">
+                            <MdPersonOutline className="iconstyle" onClick={toggleOpen} />
+                        </div>
+                        <div className="row">
+                            {isOpen && (Menu(isOpen, setOpen))}
+                        </div>
+                    </IconContext.Provider>
                 </div>
-                <div className=".col-6 .col-md-4">
-                    <nav className="bg-warning  col-sm navbar">
-                        <form className="paligned form-inline">
-                            <input className="bg-dark colorWhite navstyle form-control mr-sm-2 inputCustom" onChange={(event) => updateInputValue(event.target.value)} type="search"  placeholder="Procure um artista ou uma musica..." aria-label="Search" />
-                            <a className="btn btn-dark my-2 my-sm-0">
-                                <IconContext.Provider value={{ color: "#ffc107", size: "1.2em", className: "global-class-name " }}>
-                                    <div>
-                                        <MdSearch type="button" onClick={() => searchArtistSong(inputValue)} />
-                                    </div>
-                                </IconContext.Provider>
-                            </a>
-                        </form>
-                    </nav>
-                </div>
-                <div className=".col-6 .col-md-4"></div>
             </div>
-        </div>
+            <div className="grid-item">My Music App</div>
+            <div className="grid-item">
+                <nav className="bg-warning">
+                    <form className="paligned form-inline">
+                        <input className="bg-dark colorWhite navstyle form-control mr-sm-2 inputCustom" onChange={(event) => updateInputValue(event.target.value)} type="search" placeholder="Procure um artista ou uma musica..." aria-label="Search" />
+                        <a className="btn btn-dark my-2 my-sm-0">
+                            <IconContext.Provider value={{ color: "#ffc107", size: "1.2em", className: "global-class-name " }}>
+                                <div>
+                                    <MdSearch type="button" onClick={() => searchArtistSong(inputValue)} />
+                                </div>
+                            </IconContext.Provider>
+                        </a>
+                    </form>
+                </nav>
+            </div>
+        </>
     );
 }
 

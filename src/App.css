@@ -40,3 +40,13 @@
     transform: rotate(360deg);
   }
 }
+
+
+/* grid */
+.grid-container {
+  display: grid;
+  grid-row-gap: 50px;
+  grid-template-columns: repeat(3, 1fr);
+  padding-bottom: 1em;
+}
+
