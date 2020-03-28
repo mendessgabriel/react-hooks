@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
 import './App.css';
+import "bootstrap/dist/css/bootstrap.css"
 
 import IArtists from "./artists/IArtists";
 import IAlbuns from "./album/IAlbuns";
@@ -14,6 +15,8 @@ import IAppGeneral from './IAppGeneral';
 
 import Carousel, { Dots } from '@brainhubeu/react-carousel';
 import '@brainhubeu/react-carousel/lib/style.css';
+
+
 
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
 
@@ -59,11 +62,11 @@ function App() {
   const renderMenu = () => { if (!appGeneral.isMenuVisible) { return (<div>{Menu()}</div>) } else { return (<div></div>) } }
 
   const searchArtistSong = (parametro: String) => {
+    setCurrentArtists([])
     currentArtists.forEach(element => {
       if (element.name.includes(parametro.toString())) {
-        setArtistsToBeDisplayed([element]); //Its not working
+        setCurrentArtists([{...element}]); //Its not working
       }
-      console.log(artistsToBeDisplayed);
     });
   }
 
@@ -86,12 +89,23 @@ function App() {
                   arrowLeft={<MdKeyboardArrowLeft />}
                   arrowRight={<MdKeyboardArrowRight />}
                   addArrowClickHandler>
-                  <div className="col-sm">
+                    {
+                      currentArtists.length > 0 && (
+                        currentArtists.map((element, i) => {
+                          return (
+                            <div className="col-sm" key={i}>
+                            {Panel(element)}
+                          </div>
+                          )
+                        })
+                      )
+                    }
+                  {/* <div className="col-sm">
                     {Panel(ret, setRET)}
                   </div>
                   <div className="col-sm">
                     {Panel(fbc, setFBC)}
-                  </div>
+                  </div> */}
                 </Carousel>
               </div>
               {/* <div className="col-sm">

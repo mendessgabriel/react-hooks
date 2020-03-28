@@ -3,10 +3,9 @@
     margin: 0;
     padding: 0;
     width: 175px;
-    border-top-right-radius: 15px;
-    border-bottom-right-radius: 15px;
     position: absolute;
     z-index: 1;
+    border-radius: 11px;
   }
 
 .liCustom{
@@ -15,9 +14,7 @@
     }
 
   .liCustom:hover{
-    background-color: #555;
-    border-top-right-radius: 15px;
-    border-bottom-right-radius: 15px;
+    background-color: #ffc107;
     cursor: pointer;
     width: 240px;
   }
@@ -25,7 +22,7 @@
   
   .liCustom a {
     display: block;
-    color: #555;
+    color: #ffc107;
     padding: 8px 16px;
     text-decoration: none;
   }
@@ -33,9 +30,21 @@
   /* Change the link color on hover */
 
   .liCustom a:hover {
-    background-color: #555;
+    background-color: #ffc107;
     color:  #ffc107;
-    border-top-right-radius: 15px;
-    border-bottom-right-radius: 15px;
+  }
+
+  .fontCustom{
+    font-weight: bold;
+    color: #ffc107;
+    border-radius: 11px;
+    
+  }
+
+  
+  .fontCustom:hover{
+    background-color: black;
+    color: #ffc107;
+    border-radius: 11px;
   }
  

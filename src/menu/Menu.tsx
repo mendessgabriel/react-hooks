@@ -5,11 +5,13 @@ import "bootstrap/dist/css/bootstrap.css"
 
 const Menu = () => {
     return (
-        <ul className="bg-warning ulCustom">
-            <li className="liCustom"><a><b>Perfil</b></a></li>
-            <li className="liCustom"><a><b>Configurações</b></a></li>
-        </ul>
+        <ul className="bg-dark ulCustom">
+            <div aria-labelledby="dropdownMenuButton">
+                <a className="dropdown-item fontCustom" href="#">Perfil</a>
+                <a className="dropdown-item fontCustom" href="#">Configurações</a>
+            </div>  
+        </ul> 
     );
-}
+} 
 
-export default Menu;
+export default Menu; 

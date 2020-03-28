@@ -12,7 +12,7 @@ import { MdClose } from "react-icons/md";
 import { IconContext } from "react-icons";
 import IAppGeneral from '../IAppGeneral';
 
-const Panel = (artist: IArtists, setName: (artista: IArtists) => void) => {
+const Panel = (artist: IArtists, setName?: (artista: IArtists) => void) => {
 
     const [visible, setVisible] = useState<Boolean>(false);
     const [currentSongs, setCurrentSongs] = useState<ISongs[]>([{ name: "", duration: "", song: "" }]);
@@ -85,8 +85,7 @@ const Panel = (artist: IArtists, setName: (artista: IArtists) => void) => {
                                     <li key={i} className={i % 2 == 0 ? "strippedIn" : "strippedOut"}>{answer.name}</li>
                                 )
                             })
-                        )
-                        }
+                        )}
                     </div>
                     {/* <input type="text" onChange={(event) => setName({...artist, name: event.target.value})}/> */}
                 </div>
