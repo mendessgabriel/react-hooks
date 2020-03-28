@@ -35,7 +35,7 @@ const Header = (menuVisibility: IAppGeneral, setAppGeneral: (appGeneral: IAppGen
 
     return (
         <div className="bg-warning header-align card navbar paligned row">
-            <div className="container">
+            <div className="container iconAdjust">
                 <div className=".col-6 .col-md-4">
                     {/* <IconContext.Provider value={{ color: "btn-dark", size: "2em", className: "global-class-name" }}>
                         <div>
@@ -43,7 +43,6 @@ const Header = (menuVisibility: IAppGeneral, setAppGeneral: (appGeneral: IAppGen
                         </div>
                     </IconContext.Provider> */}
                     <div className="dropdown" onClick={toggleOpen}>
-                        {/* <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true">Dropdown</button> */}
                         <IconContext.Provider value={{ color: "btn-dark", size: "2em", className: "global-class-name" }}>
                             <div>
                                 <MdPersonOutline className="iconstyle" />
