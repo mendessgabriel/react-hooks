@@ -59,7 +59,7 @@ function App() {
   const appStart: IAppGeneral = { isMenuVisible: true };
   const [appGeneral, setAppGeneral] = useState<IAppGeneral>(appStart);
 
-  const renderMenu = () => { if (!appGeneral.isMenuVisible) { return (<div>{Menu()}</div>) } else { return (<div></div>) } }
+  const renderMenu = () => { if (!appGeneral.isMenuVisible) { return (<div>{Menu(false, () => {})}</div>) } else { return (<div></div>) } }
 
   const searchArtistSong = (parametro: String) => {
     setCurrentArtists([])

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import "bootstrap/dist/css/bootstrap.css"
 import "../header/Header.css";
@@ -13,6 +13,7 @@ const Header = (menuVisibility: IAppGeneral, setAppGeneral: (appGeneral: IAppGen
 
     const [inputValue, setInputValue] = useState<String>("");
     const [isOpen, setOpen] = useState<Boolean>(false);
+
 
     const menuClass: string = `dropdown-menu${isOpen ? " show" : ""}`;
 
@@ -48,7 +49,7 @@ const Header = (menuVisibility: IAppGeneral, setAppGeneral: (appGeneral: IAppGen
                                 <MdPersonOutline className="iconstyle" />
                             </div>
                         </IconContext.Provider>
-                        {isOpen && (Menu())}
+                        {isOpen && (Menu(isOpen, setOpen))}
                     </div>
                 </div>
                 <div className="col-sm-8">
