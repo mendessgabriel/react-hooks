@@ -74,10 +74,6 @@ function App() {
     <div className="appFont">
       {Header(appGeneral, setAppGeneral, searchArtistSong)}
       <div className="row">
-        <div className="col-sm-2">
-          {renderMenu()}
-        </div>
-        <div className="col-sm">
           <div className="container">
             <div className="row">
               <div className="col-sm">
@@ -100,21 +96,10 @@ function App() {
                         })
                       )
                     }
-                  {/* <div className="col-sm">
-                    {Panel(ret, setRET)}
-                  </div>
-                  <div className="col-sm">
-                    {Panel(fbc, setFBC)}
-                  </div> */}
                 </Carousel>
               </div>
-              {/* <div className="col-sm">
-                {Panel(fbc, setFBC)}
-              </div>
-              {searchArtistSong} */}
             </div>
           </div>
-        </div>
       </div>
 
 

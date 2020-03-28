@@ -55,9 +55,9 @@ const Header = (menuVisibility: IAppGeneral, setAppGeneral: (appGeneral: IAppGen
                 <div className="col-sm-8">
                     <nav className="bg-warning  col-sm navbar">
                         <form className="paligned form-inline">
-                            <input className="bg-dark colorWhite navstyle form-control mr-sm-2" onChange={(event) => updateInputValue(event.target.value)} type="search" placeholder="Procure um artista ou uma musica..." aria-label="Search" />
+                            <input className="bg-dark colorWhite navstyle form-control mr-sm-2 inputCustom" onChange={(event) => updateInputValue(event.target.value)} type="search"  placeholder="Procure um artista ou uma musica..." aria-label="Search" />
                             <a className="btn btn-dark my-2 my-sm-0">
-                                <IconContext.Provider value={{ color: "#ffc107", size: "1.2em", className: "global-class-name" }}>
+                                <IconContext.Provider value={{ color: "#ffc107", size: "1.2em", className: "global-class-name " }}>
                                     <div>
                                         <MdSearch type="button" onClick={() => searchArtistSong(inputValue)} />
                                     </div>

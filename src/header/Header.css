@@ -22,3 +22,11 @@
 .colorWhite::placeholder{
     color:  #ffc107;
 }
+.inputCustom{
+    border: 0px solid #343a40;
+}
+
+.inputCustom::placeholder{
+    font-size: 15px;
+    font-weight: bold!important;
+}
