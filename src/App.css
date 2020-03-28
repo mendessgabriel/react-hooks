@@ -1,3 +1,8 @@
+@font-face {
+  font-family: 'Don Graffit';
+  font-style: normal;
+  src: url('fonts/DonGraffiti.otf'); /* IE9 Compat Modes */
+}
 .App {
   text-align: center;
 }
@@ -29,7 +34,7 @@
 }
 
 .appFont{
-  font-family: sans-serif;
+  font-family: Don Graffit;
 }
 
 @keyframes App-logo-spin {

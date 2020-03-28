@@ -32,8 +32,8 @@ const Panel = (artist: IArtists, setName?: (artista: IArtists) => void) => {
             <div>
                 <div className="background-deafult card">
                     <div className="card-body">
-                        <h5 className="card-title">{artist.name}</h5>
-                        <img src="/assets/img/bootstrap.svg" alt="" width="32" height="32" title="Bootstrap"></img>
+                        <h5 className="card-title fontAdjust">{artist.name}</h5>
+                        {/* <img src="/assets/img/bootstrap.svg" alt="" width="32" height="32" title="Bootstrap"></img> */}
                         <div className="card-text">
                             <p>Idade: {artist.age}</p>
                             <p>Albuns:</p>
@@ -79,6 +79,7 @@ const Panel = (artist: IArtists, setName?: (artista: IArtists) => void) => {
                         </div>
                     </IconContext.Provider>
                     <div>
+                        <ul>
                         {currentSongs.length > 0 && (
                             currentSongs.map((answer, i) => {
                                 return (
@@ -86,6 +87,7 @@ const Panel = (artist: IArtists, setName?: (artista: IArtists) => void) => {
                                 )
                             })
                         )}
+                        </ul>
                     </div>
                     {/* <input type="text" onChange={(event) => setName({...artist, name: event.target.value})}/> */}
                 </div>

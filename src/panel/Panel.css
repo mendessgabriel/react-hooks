@@ -7,7 +7,7 @@
 .geral-background{
     background: #0e0e0f;
 }
-.iconStyle{
+.iconStyle{ 
     float: right;
 }
 .strippedIn{
@@ -18,4 +18,7 @@
 }
 .cursorPointer{
     cursor: pointer;
+}
+.fontAdjust{
+    font-size: 2em;
 }

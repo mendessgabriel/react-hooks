@@ -52,7 +52,7 @@ const Header = (menuVisibility: IAppGeneral, setAppGeneral: (appGeneral: IAppGen
                     </IconContext.Provider>
                 </div>
             </div>
-            <div className="grid-item">My Music App</div>
+            <div className="grid-item MyApp">My Music App</div>
             <div className="grid-item">
                 <nav className="bg-warning">
                     <form className="paligned form-inline">
