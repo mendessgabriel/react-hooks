@@ -36,7 +36,7 @@ const Header = (menuVisibility: IAppGeneral, setAppGeneral: (appGeneral: IAppGen
     return (
         <div className="bg-warning header-align card navbar paligned row">
             <div className="container">
-                <div className="col-sm-1">
+                <div className=".col-6 .col-md-4">
                     {/* <IconContext.Provider value={{ color: "btn-dark", size: "2em", className: "global-class-name" }}>
                         <div>
                             <MdPersonOutline onClick={() => {clickAdmin()}} className="iconstyle" />
@@ -52,7 +52,7 @@ const Header = (menuVisibility: IAppGeneral, setAppGeneral: (appGeneral: IAppGen
                         {isOpen && (Menu(isOpen, setOpen))}
                     </div>
                 </div>
-                <div className="col-sm-8">
+                <div className=".col-6 .col-md-4">
                     <nav className="bg-warning  col-sm navbar">
                         <form className="paligned form-inline">
                             <input className="bg-dark colorWhite navstyle form-control mr-sm-2 inputCustom" onChange={(event) => updateInputValue(event.target.value)} type="search"  placeholder="Procure um artista ou uma musica..." aria-label="Search" />
@@ -66,6 +66,7 @@ const Header = (menuVisibility: IAppGeneral, setAppGeneral: (appGeneral: IAppGen
                         </form>
                     </nav>
                 </div>
+                <div className=".col-6 .col-md-4"></div>
             </div>
         </div>
     );
