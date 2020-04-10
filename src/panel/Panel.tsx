@@ -58,7 +58,6 @@ const Panel = (artist: IArtists, setName?: (artista: IArtists) => void) => {
                 <div className="background-deafult card">
                     <div className="card-body">
                         <h5 className="card-title">{artist.name}</h5>
-                        <img src="/assets/img/bootstrap.svg" alt="" width="32" height="32" title="Bootstrap"></img>
                         <div className="card-text">
                             <p>Idade: {artist.age}</p>
                             <p>Albuns:</p>

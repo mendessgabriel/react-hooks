@@ -8,7 +8,7 @@ import { IconContext } from "react-icons";
 import IAppGeneral from '../IAppGeneral';
 import Menu from '../menu/Menu';
 
-const Header = (menuVisibility: IAppGeneral, setAppGeneral: (appGeneral: IAppGeneral) => void, searchArtistSong: (paramentro: String) => void) => {
+const Header = (menuVisibility: IAppGeneral, setAppGeneral: (appGeneral: IAppGeneral) => void, searchArtistSong: (paramentro: String) => void, onOpenModal: () => void) => {
 
     const [inputValue, setInputValue] = useState<String>("");
     const [isOpen, setOpen] = useState<Boolean>(false);
@@ -43,7 +43,7 @@ const Header = (menuVisibility: IAppGeneral, setAppGeneral: (appGeneral: IAppGen
                             <MdPersonOutline className="iconstyle" onClick={toggleOpen} />
                         </div>
                         <div className="row">
-                            {isOpen && (Menu(isOpen, setOpen))}
+                            {isOpen && (Menu(isOpen, setOpen, onOpenModal))}
                         </div>
                     </IconContext.Provider>
                 </div>

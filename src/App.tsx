@@ -59,7 +59,7 @@ function App() {
   const appStart: IAppGeneral = { isMenuVisible: true };
   const [appGeneral, setAppGeneral] = useState<IAppGeneral>(appStart);
 
-  const renderMenu = () => { if (!appGeneral.isMenuVisible) { return (<div>{Menu(false, () => { })}</div>) } else { return (<div></div>) } }
+  const renderMenu = () => { if (!appGeneral.isMenuVisible) { return (<div>{Menu(false, () => { }, () => { })}</div>) } else { return (<div></div>) } }
 
   const br = {
     // overlay: {
@@ -87,7 +87,7 @@ function App() {
   return (
     <div className="appFont">
       <div className="grid-container">
-        {Header(appGeneral, setAppGeneral, searchArtistSong)}
+        {Header(appGeneral, setAppGeneral, searchArtistSong, onOpenModal)}
       </div>
       <div className="row">
         <div className="container">
@@ -117,7 +117,7 @@ function App() {
           </div>
         </div>
       </div>
-      <button onClick={() => onOpenModal()}>Open modal</button>
+      {/* <button onClick={() => onOpenModal()}>Open modal</button> */}
         <Modal open={openModal}  styles={br} onClose={() => onCloseModal()} center={true}>
           <h2>Simple centered modal</h2>
         </Modal>
