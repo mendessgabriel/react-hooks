@@ -8,7 +8,9 @@ import { IconContext } from "react-icons";
 import IAppGeneral from '../IAppGeneral';
 import Menu from '../menu/Menu';
 
-const Header = (menuVisibility: IAppGeneral, setAppGeneral: (appGeneral: IAppGeneral) => void, searchArtistSong: (paramentro: String) => void, onOpenModal: () => void) => {
+import {menuOptions} from "../enum/enumerable";
+
+const Header = (menuVisibility: IAppGeneral, setAppGeneral: (appGeneral: IAppGeneral) => void, searchArtistSong: (paramentro: String) => void, onOpenModal: (optionSelected: number) => void) => {
 
     const [inputValue, setInputValue] = useState<String>("");
     const [isOpen, setOpen] = useState<Boolean>(false);

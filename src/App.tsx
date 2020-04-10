@@ -61,6 +61,8 @@ function App() {
 
   const renderMenu = () => { if (!appGeneral.isMenuVisible) { return (<div>{Menu(false, () => { }, () => { })}</div>) } else { return (<div></div>) } }
 
+  const [modalContent, setModalContent] = useState<number>(0);
+
   const br = {
     // overlay: {
     //   background: "#FFFF00"
@@ -77,12 +79,47 @@ function App() {
       }
     });
   }
-  const onOpenModal = () => {
+  const onOpenModal = (optionSelected: number) => {
+    setModalContent(optionSelected);
     setOpenModal(true);
   };
   const onCloseModal = () => {
     setOpenModal(false);
   };
+  const openModalWithContent = (n: number) => {
+    switch(n) {
+      case 1:
+        return(
+          <div>
+            <Modal open={openModal}  styles={br} onClose={() => onCloseModal()} center={true}>
+              <h2>{n}</h2>
+              Bem-vindo ao seu perfil
+              {/* fazer um componente de perfil */}
+            </Modal>
+          </div>
+        );
+        break;
+      case 2:
+        return(
+          <div>
+            <Modal open={openModal}  styles={br} onClose={() => onCloseModal()} center={true}>
+              <h2>{n}</h2>
+              Bem-vindo as confiurações
+              {/* fazer um componente de configurações */}
+            </Modal>
+          </div>
+        );
+        break;
+      default:
+        return(
+          <div>
+            <Modal open={openModal}  styles={br} onClose={() => onCloseModal()} center={true}>
+              <h2>Ops, nada foi encontrado...</h2>
+            </Modal>
+          </div>
+        );
+    }
+  }
 
   return (
     <div className="appFont">
@@ -118,9 +155,12 @@ function App() {
         </div>
       </div>
       {/* <button onClick={() => onOpenModal()}>Open modal</button> */}
-        <Modal open={openModal}  styles={br} onClose={() => onCloseModal()} center={true}>
+        {/* <Modal open={openModal}  styles={br} onClose={() => onCloseModal()} center={true}>
           <h2>Simple centered modal</h2>
-        </Modal>
+        </Modal> */}
+        {openModal && (
+          openModalWithContent(modalContent)
+        )}
     </div>
   );
 }
