@@ -8,8 +8,8 @@ const Menu = (isOpen: Boolean, setAppGeneral: (result: Boolean) => void, onOpenM
         <>
             <ul className="bg-dark ulCustom" onMouseLeave={() => setAppGeneral(false)}>
                 <div aria-labelledby="dropdownMenuButton">
-                    <a className="dropdown-item fontCustom" onClick={() => onOpenModal(menuOptions.perfil)}>Perfil</a>
-                    <a className="dropdown-item fontCustom" onClick={() => onOpenModal(menuOptions.Configurations)}>Configurações</a>
+                    <a className="dropdown-item fontCustom" onClick={() => onOpenModal(menuOptions.perfil)}><b>Perfil</b></a>
+                    <a className="dropdown-item fontCustom" onClick={() => onOpenModal(menuOptions.Configurations)}><b>Configurações</b></a>
                 </div>
             </ul>
         </>

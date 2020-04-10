@@ -34,7 +34,8 @@
 }
 
 .appFont{
-  font-family:  Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  /* font-family:  Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; */
+  font-family: riot;
 }
 
 @keyframes App-logo-spin {

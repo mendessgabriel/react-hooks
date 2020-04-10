@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import "bootstrap/dist/css/bootstrap.css"
 import "../header/Header.css";
 
-import { MdPersonOutline, MdSearch } from "react-icons/md";
+import { MdPersonOutline, MdPerson, MdSearch } from "react-icons/md";
 import { IconContext } from "react-icons";
 import IAppGeneral from '../IAppGeneral';
 import Menu from '../menu/Menu';
@@ -42,7 +42,8 @@ const Header = (menuVisibility: IAppGeneral, setAppGeneral: (appGeneral: IAppGen
                 <div className="dropdown" >
                     <IconContext.Provider value={{ color: "btn-dark", size: "2em", className: "global-class-name" }}>
                         <div className="row">
-                            <MdPersonOutline className="iconstyle" onClick={toggleOpen} />
+                            { !isOpen && (<MdPersonOutline className="iconstyle" onClick={toggleOpen} /> )}
+                            { isOpen && (<MdPerson className="iconstyle" onClick={toggleOpen} /> )}
                         </div>
                         <div className="row">
                             {isOpen && (Menu(isOpen, setOpen, onOpenModal))}

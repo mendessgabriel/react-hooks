@@ -22,3 +22,6 @@
 .fontAdjust{
     font-size: 2em;
 }
+.imgAdjust{
+    height: 100px!important;
+}
