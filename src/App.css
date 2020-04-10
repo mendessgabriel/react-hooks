@@ -34,7 +34,7 @@
 }
 
 .appFont{
-  font-family: Don Graffit;
+  font-family:  Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 @keyframes App-logo-spin {
@@ -54,4 +54,3 @@
   grid-template-columns: repeat(3, 1fr);
   padding-bottom: 1em;
 }
-

@@ -3,7 +3,6 @@ import React, { useState, useEffect } from 'react';
 import "bootstrap/dist/css/bootstrap.css"
 import "../header/Header.css";
 
-
 import { MdPersonOutline, MdSearch } from "react-icons/md";
 import { IconContext } from "react-icons";
 import IAppGeneral from '../IAppGeneral';
@@ -13,9 +12,6 @@ const Header = (menuVisibility: IAppGeneral, setAppGeneral: (appGeneral: IAppGen
 
     const [inputValue, setInputValue] = useState<String>("");
     const [isOpen, setOpen] = useState<Boolean>(false);
-
-
-    const menuClass: string = `dropdown-menu${isOpen ? " show" : ""}`;
 
     const clickAdmin = () => {
         if (menuVisibility.isMenuVisible) {

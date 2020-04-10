@@ -1,23 +1,22 @@
 import React, { useState } from 'react';
 
 import './App.css';
-import "bootstrap/dist/css/bootstrap.css"
 
-import IArtists from "./artists/IArtists";
-import IAlbuns from "./album/IAlbuns";
 import IGenre from "./genre/IGenre";
+import IAlbuns from "./album/IAlbuns";
+import IArtists from "./artists/IArtists";
 
-import Panel from "./panel/Panel";
-import ISongs from './album/songs/ISongs';
-import Header from './header/Header';
 import Menu from './menu/Menu';
+import Panel from "./panel/Panel";
+import Header from './header/Header';
 import IAppGeneral from './IAppGeneral';
+import ISongs from './album/songs/ISongs';
 
-import Carousel, { Dots } from '@brainhubeu/react-carousel';
+import "bootstrap/dist/css/bootstrap.css"
+import 'react-responsive-modal/styles.css';
+import { Modal } from 'react-responsive-modal';
+import Carousel from '@brainhubeu/react-carousel';
 import '@brainhubeu/react-carousel/lib/style.css';
-
-
-
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
 
 function App() {
@@ -28,13 +27,14 @@ function App() {
   const genreRETobj: IGenre[] = [{ genre: "RAP" }];
   const genreFBCobj: IGenre[] = [{ genre: "RAP" }];
 
+  const [openModal, setOpenModal] = useState<boolean>(false);
+
   const songsTreVVZ: ISongs[] = [{ song: "Neurotico de guerra", duration: "3:37", name: "Neurotico de guerra" }, { song: "Réus", duration: "3:37", name: "Réus" }];
   const [songsRetVVZ] = useState<ISongs[]>(songsTreVVZ);
 
   const songsTreNMD: ISongs[] = [{ song: "Só precisamos de nós", duration: "2:37", name: "Só precisamos de nós" }, { song: "Desenho", duration: "3:28", name: "Desenho" }, { song: "Questione", duration: "2:32", name: "Questione" }];
   const [songsRetNMD] = useState<ISongs[]>(songsTreNMD);
 
-  // const songsRET: ISongs[] = [{name: "Invicto",duration: "",song: "saaa",album: albunsRET }];
   const AlbunsRET: IAlbuns[] = [{ name: "Numa Margem Distante", visible: true, songs: songsRetNMD, release: "15/11" }, { name: "VIVAZ", visible: true, songs: songsRetVVZ, release: "15/11" }, { name: "REVEL", visible: true, songs: songsRetNMD, release: "15/11" }, { name: "AUDAZ", visible: true, songs: songsRetNMD, release: "15/11" }];
 
   const filipeRet: IArtists = {
@@ -59,16 +59,22 @@ function App() {
   const appStart: IAppGeneral = { isMenuVisible: true };
   const [appGeneral, setAppGeneral] = useState<IAppGeneral>(appStart);
 
-  const renderMenu = () => { if (!appGeneral.isMenuVisible) { return (<div>{Menu(false, () => {})}</div>) } else { return (<div></div>) } }
+  const renderMenu = () => { if (!appGeneral.isMenuVisible) { return (<div>{Menu(false, () => { })}</div>) } else { return (<div></div>) } }
 
   const searchArtistSong = (parametro: String) => {
     setCurrentArtists([])
     currentArtists.forEach(element => {
       if (element.name.includes(parametro.toString())) {
-        setCurrentArtists([{...element}]); //Its not working
+        setCurrentArtists([{ ...element }]); //Its not working
       }
     });
   }
+  const onOpenModal = () => {
+    setOpenModal(true);
+  };
+  const onCloseModal = () => {
+    setOpenModal(false);
+  };
 
   return (
     <div className="appFont">
@@ -76,35 +82,37 @@ function App() {
         {Header(appGeneral, setAppGeneral, searchArtistSong)}
       </div>
       <div className="row">
-          <div className="container">
-            <div className="row">
-              <div className="col-sm">
-                <Carousel
-                  infinite
-                  slidesPerPage={2}
-                  autoPlay={2500}
-                  stopAutoPlayOnHover
-                  arrowLeft={<MdKeyboardArrowLeft />}
-                  arrowRight={<MdKeyboardArrowRight />}
-                  addArrowClickHandler>
-                    {
-                      currentArtists.length > 0 && (
-                        currentArtists.map((element, i) => {
-                          return (
-                            <div className="col-sm" key={i}>
-                            {Panel(element)}
-                          </div>
-                          )
-                        })
+        <div className="container">
+          <div className="row">
+            <div className="col-sm">
+              <Carousel
+                infinite
+                slidesPerPage={2}
+                autoPlay={2500}
+                stopAutoPlayOnHover
+                arrowLeft={<MdKeyboardArrowLeft />}
+                arrowRight={<MdKeyboardArrowRight />}
+                addArrowClickHandler>
+                {
+                  currentArtists.length > 0 && (
+                    currentArtists.map((element, i) => {
+                      return (
+                        <div className="col-sm" key={i}>
+                          {Panel(element)}
+                        </div>
                       )
-                    }
-                </Carousel>
-              </div>
+                    })
+                  )
+                }
+              </Carousel>
             </div>
           </div>
+        </div>
       </div>
-
-
+      <button onClick={() => onOpenModal()}>Open modal</button>
+        <Modal open={openModal} onClose={() => onCloseModal()} center={true}>
+          <h2>Simple centered modal</h2>
+        </Modal>
     </div>
   );
 }

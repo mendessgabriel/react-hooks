@@ -5,7 +5,7 @@ import "bootstrap/dist/css/bootstrap.css"
 import IAlbuns from '../album/IAlbuns';
 import "../button/Button.css";
 
-const Button = (albuns: IAlbuns) => {
+const Button = (albuns: IAlbuns, useFunc?: () => void) => {
     if (albuns.visible) {
         return (
             <div>
