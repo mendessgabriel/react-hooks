@@ -61,6 +61,14 @@ function App() {
 
   const renderMenu = () => { if (!appGeneral.isMenuVisible) { return (<div>{Menu(false, () => { })}</div>) } else { return (<div></div>) } }
 
+  const br = {
+    // overlay: {
+    //   background: "#FFFF00"
+    // },
+    modal: {
+      borderRadius: "10px"
+    }
+  };
   const searchArtistSong = (parametro: String) => {
     setCurrentArtists([])
     currentArtists.forEach(element => {
@@ -110,7 +118,7 @@ function App() {
         </div>
       </div>
       <button onClick={() => onOpenModal()}>Open modal</button>
-        <Modal open={openModal} onClose={() => onCloseModal()} center={true}>
+        <Modal open={openModal}  styles={br} onClose={() => onCloseModal()} center={true}>
           <h2>Simple centered modal</h2>
         </Modal>
     </div>
